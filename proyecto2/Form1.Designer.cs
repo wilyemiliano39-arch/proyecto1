@@ -37,25 +37,13 @@
             checkBox1 = new CheckBox();
             button1 = new Button();
             button2 = new Button();
-            groupBox1 = new GroupBox();
-            label13 = new Label();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
             button3 = new Button();
-            lstResultados = new ListBox();
+            ltsResultados = new ListBox();
             numericUpDown2 = new NumericUpDown();
             label14 = new Label();
             button4 = new Button();
-            button5 = new Button();
+            Tbntnivel1 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
             // 
@@ -138,119 +126,6 @@
             button2.Text = "Limpiar";
             button2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(3, 300);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(411, 216);
-            groupBox1.TabIndex = 9;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Cotizacion";
-            groupBox1.Enter += groupBox1_Enter;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(340, 193);
-            label13.Name = "label13";
-            label13.Size = new Size(45, 23);
-            label13.TabIndex = 9;
-            label13.Text = "0.00";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(340, 154);
-            label12.Name = "label12";
-            label12.Size = new Size(36, 20);
-            label12.TabIndex = 8;
-            label12.Text = "0.00";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(340, 120);
-            label11.Name = "label11";
-            label11.Size = new Size(36, 20);
-            label11.TabIndex = 7;
-            label11.Text = "0.00";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(340, 78);
-            label10.Name = "label10";
-            label10.Size = new Size(36, 20);
-            label10.TabIndex = 6;
-            label10.Text = "0.00";
-            label10.Click += label10_Click;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(340, 37);
-            label9.Name = "label9";
-            label9.Size = new Size(36, 20);
-            label9.TabIndex = 5;
-            label9.Text = "0.00";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(6, 193);
-            label8.Name = "label8";
-            label8.Size = new Size(101, 23);
-            label8.TabIndex = 4;
-            label8.Text = "TOTAL USD";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(9, 154);
-            label7.Name = "label7";
-            label7.Size = new Size(61, 20);
-            label7.TabIndex = 3;
-            label7.Text = "Servicio";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(11, 120);
-            label6.Name = "label6";
-            label6.Size = new Size(42, 20);
-            label6.TabIndex = 2;
-            label6.Text = "ITBIS";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(11, 78);
-            label5.Name = "label5";
-            label5.Size = new Size(79, 20);
-            label5.TabIndex = 1;
-            label5.Text = "Descuento";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(11, 37);
-            label4.Name = "label4";
-            label4.Size = new Size(65, 20);
-            label4.TabIndex = 0;
-            label4.Text = "Subtotal";
-            // 
             // button3
             // 
             button3.Location = new Point(3, 524);
@@ -260,14 +135,14 @@
             button3.Text = "Copiar para  Whatsapp\r\n";
             button3.UseVisualStyleBackColor = true;
             // 
-            // lstResultados
+            // ltsResultados
             // 
-            lstResultados.FormattingEnabled = true;
-            lstResultados.Location = new Point(677, 229);
-            lstResultados.Name = "lstResultados";
-            lstResultados.Size = new Size(161, 324);
-            lstResultados.TabIndex = 11;
-            lstResultados.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            ltsResultados.FormattingEnabled = true;
+            ltsResultados.Location = new Point(503, 197);
+            ltsResultados.Name = "ltsResultados";
+            ltsResultados.Size = new Size(161, 324);
+            ltsResultados.TabIndex = 11;
+            ltsResultados.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // numericUpDown2
             // 
@@ -298,27 +173,27 @@
             button4.Text = "Total en RD$";
             button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // Tbntnivel1
             // 
-            button5.Location = new Point(591, 253);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 29);
-            button5.TabIndex = 15;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
+            Tbntnivel1.Location = new Point(12, 197);
+            Tbntnivel1.Name = "Tbntnivel1";
+            Tbntnivel1.Size = new Size(94, 29);
+            Tbntnivel1.TabIndex = 18;
+            Tbntnivel1.Text = "nivel1";
+            Tbntnivel1.UseVisualStyleBackColor = true;
+            Tbntnivel1.Click += Tbntnivel1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(841, 565);
-            Controls.Add(button5);
+            Controls.Add(Tbntnivel1);
             Controls.Add(button4);
             Controls.Add(label14);
             Controls.Add(numericUpDown2);
-            Controls.Add(lstResultados);
+            Controls.Add(ltsResultados);
             Controls.Add(button3);
-            Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(checkBox1);
@@ -331,8 +206,6 @@
             Name = "Form1";
             Text = "Cotizador villa Coral - WilyEmiliano: 2026-0421";
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -349,22 +222,11 @@
         private CheckBox checkBox1;
         private Button button1;
         private Button button2;
-        private GroupBox groupBox1;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label7;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label13;
-        private Label label12;
         private Button button3;
-        private ListBox lstResultados;
+        private ListBox ltsResultados;
         private NumericUpDown numericUpDown2;
         private Label label14;
         private Button button4;
-        private Button button5;
+        private Button Tbntnivel1;
     }
 }

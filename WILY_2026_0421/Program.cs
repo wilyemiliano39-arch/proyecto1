@@ -1,4 +1,4 @@
-namespace proyecto2
+namespace WILY_2026_0421
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace proyecto2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Form2());
         }
     }
 }

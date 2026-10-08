@@ -1,33 +1,34 @@
-namespace proyecto2
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace WILY_2026_0421
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+        
+
+  
+
+        private void ltsResultados_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tbntnivel1_Click(object sender, EventArgs e)
+        private void btnNivel1_Click_1(object sender, EventArgs e)
         {
             int a = 10;
             int b = 3;
