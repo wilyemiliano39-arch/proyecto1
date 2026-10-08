@@ -48,6 +48,12 @@
             btnDeposito = new Button();
             btnDesglose = new Button();
             btnCuentaTotal = new Button();
+            btnTraslado = new Button();
+            btnExcursion = new Button();
+            btnMinibar = new Button();
+            btnFactura = new Button();
+            btnViejo = new Button();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPersonas).BeginInit();
@@ -57,9 +63,9 @@
             // lstResultados
             // 
             lstResultados.FormattingEnabled = true;
-            lstResultados.Location = new Point(0, 292);
+            lstResultados.Location = new Point(12, 256);
             lstResultados.Name = "lstResultados";
-            lstResultados.Size = new Size(802, 164);
+            lstResultados.Size = new Size(1088, 304);
             lstResultados.TabIndex = 0;
             lstResultados.SelectedIndexChanged += ltsResultados_SelectedIndexChanged;
             // 
@@ -95,7 +101,7 @@
             // nudTasa
             // 
             nudTasa.DecimalPlaces = 2;
-            nudTasa.Location = new Point(86, 162);
+            nudTasa.Location = new Point(106, 49);
             nudTasa.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudTasa.Name = "nudTasa";
             nudTasa.Size = new Size(92, 27);
@@ -115,7 +121,7 @@
             // 
             // nudPersonas
             // 
-            nudPersonas.Location = new Point(319, 167);
+            nudPersonas.Location = new Point(324, 49);
             nudPersonas.Name = "nudPersonas";
             nudPersonas.Size = new Size(92, 27);
             nudPersonas.TabIndex = 6;
@@ -134,7 +140,7 @@
             // chkFinSemana
             // 
             chkFinSemana.AutoSize = true;
-            chkFinSemana.Location = new Point(435, 150);
+            chkFinSemana.Location = new Point(454, 52);
             chkFinSemana.Name = "chkFinSemana";
             chkFinSemana.Size = new Size(166, 24);
             chkFinSemana.TabIndex = 8;
@@ -189,7 +195,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(11, 164);
+            label2.Location = new Point(12, 51);
             label2.Name = "label2";
             label2.Size = new Size(69, 20);
             label2.TabIndex = 15;
@@ -199,7 +205,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(234, 169);
+            label3.Location = new Point(242, 51);
             label3.Name = "label3";
             label3.Size = new Size(66, 20);
             label3.TabIndex = 16;
@@ -238,19 +244,85 @@
             // 
             // btnCuentaTotal
             // 
-            btnCuentaTotal.Location = new Point(542, 209);
+            btnCuentaTotal.Location = new Point(12, 148);
             btnCuentaTotal.Name = "btnCuentaTotal";
-            btnCuentaTotal.Size = new Size(189, 29);
+            btnCuentaTotal.Size = new Size(108, 29);
             btnCuentaTotal.TabIndex = 22;
             btnCuentaTotal.Text = "Cuenta  Total";
             btnCuentaTotal.UseVisualStyleBackColor = true;
             btnCuentaTotal.Click += btnCuentaTotal_Click;
             // 
+            // btnTraslado
+            // 
+            btnTraslado.Location = new Point(818, 95);
+            btnTraslado.Name = "btnTraslado";
+            btnTraslado.Size = new Size(78, 29);
+            btnTraslado.TabIndex = 23;
+            btnTraslado.Text = "Traslado";
+            btnTraslado.UseVisualStyleBackColor = true;
+            btnTraslado.Click += btnTraslado_Click;
+            // 
+            // btnExcursion
+            // 
+            btnExcursion.Location = new Point(922, 95);
+            btnExcursion.Name = "btnExcursion";
+            btnExcursion.Size = new Size(86, 29);
+            btnExcursion.TabIndex = 24;
+            btnExcursion.Text = "Excursion ";
+            btnExcursion.UseVisualStyleBackColor = true;
+            btnExcursion.Click += btnExcursion_Click;
+            // 
+            // btnMinibar
+            // 
+            btnMinibar.Location = new Point(1014, 95);
+            btnMinibar.Name = "btnMinibar";
+            btnMinibar.Size = new Size(86, 29);
+            btnMinibar.TabIndex = 25;
+            btnMinibar.Text = "Minibar ";
+            btnMinibar.UseVisualStyleBackColor = true;
+            btnMinibar.Click += btnMinibar_Click;
+            // 
+            // btnFactura
+            // 
+            btnFactura.Location = new Point(324, 148);
+            btnFactura.Name = "btnFactura";
+            btnFactura.Size = new Size(79, 29);
+            btnFactura.TabIndex = 26;
+            btnFactura.Text = "Factura";
+            btnFactura.UseVisualStyleBackColor = true;
+            btnFactura.Click += button2_Click;
+            // 
+            // btnViejo
+            // 
+            btnViejo.Location = new Point(139, 148);
+            btnViejo.Name = "btnViejo";
+            btnViejo.Size = new Size(169, 29);
+            btnViejo.TabIndex = 27;
+            btnViejo.Text = "Probar  sistema  viejo";
+            btnViejo.UseVisualStyleBackColor = true;
+            btnViejo.Click += btnViejo_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(427, 148);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(87, 29);
+            btnLimpiar.TabIndex = 28;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1225, 572);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnViejo);
+            Controls.Add(btnFactura);
+            Controls.Add(btnMinibar);
+            Controls.Add(btnExcursion);
+            Controls.Add(btnTraslado);
             Controls.Add(btnCuentaTotal);
             Controls.Add(btnDesglose);
             Controls.Add(btnDeposito);
@@ -304,5 +376,11 @@
         private Button btnDeposito;
         private Button btnDesglose;
         private Button btnCuentaTotal;
+        private Button btnTraslado;
+        private Button btnExcursion;
+        private Button btnMinibar;
+        private Button btnFactura;
+        private Button btnViejo;
+        private Button btnLimpiar;
     }
 }

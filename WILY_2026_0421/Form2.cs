@@ -218,7 +218,7 @@ namespace WILY_2026_0421
             lstResultados.Items.Add($"Total:          US$ {reserva.Total:N2}");
         }
 
-       
+
 
         private void btnCuentaTotal_Click(object sender, EventArgs e)
         {
@@ -230,6 +230,60 @@ namespace WILY_2026_0421
             decimal cuenta = reserva.Total + traslado.Total + excursion.Total + minibar.Total;
             lstResultados.Items.Add($"Cuenta total de la estadía: US$ {cuenta:N2}");
         }
+
+        private void btnTraslado_Click(object sender, EventArgs e)
+        {
+            var traslado = CrearTraslado();
+            lstResultados.Items.Add($"Traslado aeropuerto (nocturno, {traslado.Pasajeros} pasajeros): US$ {traslado.Total:N2}");
+        }
+
+        private void btnExcursion_Click(object sender, EventArgs e)
+        {
+            var excursion = CrearExcursion();
+            lstResultados.Items.Add($"Excursión Saona ({excursion.Personas} personas x {excursion.PrecioPorPersona:N2}): US$ {excursion.Total:N2}");
+        }
+
+        private void btnMinibar_Click(object sender, EventArgs e)
+        {
+            var minibar = CrearMinibar();
+            lstResultados.Items.Add($"Minibar ({minibar.Cantidad} x {minibar.PrecioUnitario:N2} + ITBIS): US$ {minibar.Total:N2}");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var reserva = CrearReservaConFinDeSemana();
+            var traslado = CrearTraslado();
+            var excursion = CrearExcursion();
+            var minibar = CrearMinibar();
+
+            decimal totalGeneral = reserva.Total + traslado.Total + excursion.Total + minibar.Total;
+            decimal totalPesos = SistemaViejo.APesos(totalGeneral, nudTasa.Value);
+            decimal deposito = SistemaViejo.CalcularDeposito(totalGeneral);
+
+            lstResultados.Items.Add($"===== FACTURA · {reserva.Huesped} =====");
+            lstResultados.Items.Add($"Estadía ({reserva.Noches} noches):  US$ {reserva.Total:N2}");
+            lstResultados.Items.Add($"Traslado aeropuerto:              US$ {traslado.Total:N2}");
+            lstResultados.Items.Add($"Excursión isla Saona:             US$ {excursion.Total:N2}");
+            lstResultados.Items.Add($"Consumo minibar:                  US$ {minibar.Total:N2}");
+            lstResultados.Items.Add($"TOTAL GENERAL:                    US$ {totalGeneral:N2}");
+            lstResultados.Items.Add($"TOTAL EN PESOS:                   RD$ {totalPesos:N2}");
+            lstResultados.Items.Add($"Depósito para confirmar (30%):    US$ {deposito:N2}");
+        }
+
+        private void btnViejo_Click(object sender, EventArgs e)
+        {
+            lstResultados.Items.Add($"Depósito de 1000: {SistemaViejo.CalcularDeposito(1000m):N2} (debe dar 300.00)");
+            lstResultados.Items.Add($"100 USD a tasa 60: {SistemaViejo.APesos(100m, 60m):N2} (debe dar 6,000.00)");
+            lstResultados.Items.Add($"Tarifa 200 fin de semana: {SistemaViejo.TarifaFinDeSemana(200m, true):N2} (debe dar 230.00)");
+            lstResultados.Items.Add($"Excursión 4 x 50: {SistemaViejo.TotalExcursion(4, 50m):N2} (debe dar 180.00)");
+            lstResultados.Items.Add($"Minibar 3 x 4: {SistemaViejo.TotalMinibar(3, 4m):N2} (debe dar 14.16)");
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            lstResultados.Items.Clear();
+        }
     }
+
 }
 
