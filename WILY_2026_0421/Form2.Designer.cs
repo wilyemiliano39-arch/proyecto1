@@ -286,11 +286,10 @@
             // 
             btnFactura.Location = new Point(324, 148);
             btnFactura.Name = "btnFactura";
-            btnFactura.Size = new Size(79, 29);
-            btnFactura.TabIndex = 26;
+            btnFactura.Size = new Size(75, 29);
+            btnFactura.TabIndex = 29;
             btnFactura.Text = "Factura";
-            btnFactura.UseVisualStyleBackColor = true;
-            btnFactura.Click += button2_Click;
+            btnFactura.Click += btnFactura_Click;
             // 
             // btnViejo
             // 
@@ -344,7 +343,7 @@
             Controls.Add(btnNivel1);
             Controls.Add(lstResultados);
             Name = "Form2";
-            Text = "Form2";
+            Text = "Cotizador_villacoral_wilyemilano2026-0421";
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)nudTasa).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).EndInit();

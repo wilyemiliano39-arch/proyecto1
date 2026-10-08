@@ -249,7 +249,24 @@ namespace WILY_2026_0421
             lstResultados.Items.Add($"Minibar ({minibar.Cantidad} x {minibar.PrecioUnitario:N2} + ITBIS): US$ {minibar.Total:N2}");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private void btnViejo_Click(object sender, EventArgs e)
+        {
+            lstResultados.Items.Add($"Depósito de 1000: {SistemaViejo.CalcularDeposito(1000m):N2} (debe dar 300.00)");
+            lstResultados.Items.Add($"100 USD a tasa 60: {SistemaViejo.APesos(100m, 60m):N2} (debe dar 6,000.00)");
+            lstResultados.Items.Add($"Tarifa 200 fin de semana: {SistemaViejo.TarifaFinDeSemana(200m, true):N2} (debe dar 230.00)");
+            lstResultados.Items.Add($"Excursión 4 x 50: {SistemaViejo.TotalExcursion(4, 50m):N2} (debe dar 180.00)");
+            lstResultados.Items.Add($"Minibar 3 x 4: {SistemaViejo.TotalMinibar(3, 4m):N2} (debe dar 14.16)");
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            lstResultados.Items.Clear();
+        }
+
+    
+        private void btnFactura_Click(object sender, EventArgs e)
         {
             var reserva = CrearReservaConFinDeSemana();
             var traslado = CrearTraslado();
@@ -268,20 +285,6 @@ namespace WILY_2026_0421
             lstResultados.Items.Add($"TOTAL GENERAL:                    US$ {totalGeneral:N2}");
             lstResultados.Items.Add($"TOTAL EN PESOS:                   RD$ {totalPesos:N2}");
             lstResultados.Items.Add($"Depósito para confirmar (30%):    US$ {deposito:N2}");
-        }
-
-        private void btnViejo_Click(object sender, EventArgs e)
-        {
-            lstResultados.Items.Add($"Depósito de 1000: {SistemaViejo.CalcularDeposito(1000m):N2} (debe dar 300.00)");
-            lstResultados.Items.Add($"100 USD a tasa 60: {SistemaViejo.APesos(100m, 60m):N2} (debe dar 6,000.00)");
-            lstResultados.Items.Add($"Tarifa 200 fin de semana: {SistemaViejo.TarifaFinDeSemana(200m, true):N2} (debe dar 230.00)");
-            lstResultados.Items.Add($"Excursión 4 x 50: {SistemaViejo.TotalExcursion(4, 50m):N2} (debe dar 180.00)");
-            lstResultados.Items.Add($"Minibar 3 x 4: {SistemaViejo.TotalMinibar(3, 4m):N2} (debe dar 14.16)");
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            lstResultados.Items.Clear();
         }
     }
 
