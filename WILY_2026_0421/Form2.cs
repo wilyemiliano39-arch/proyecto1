@@ -10,6 +10,14 @@ namespace WILY_2026_0421
 {
     public partial class Form2 : Form
     {
+        private const int UltimoDigitoMatricula = 0;
+
+        private int Pasajeros => (int)nudPersonas.Value;
+        private int PersonasExcursion => Pasajeros + 2;
+        private decimal PrecioExcursion => 45 + 5 * UltimoDigitoMatricula;
+        private int CantidadMinibar => UltimoDigitoMatricula + 2;
+
+
         public Form2()
         {
             InitializeComponent();
@@ -42,6 +50,35 @@ namespace WILY_2026_0421
                 TarifaPorNoche = tarifa
             };
         }
+
+
+        private TrasladoAeropuerto CrearTraslado()
+        {
+            return new TrasladoAeropuerto
+            {
+                Pasajeros = Pasajeros,
+                Nocturno = true
+            };
+        }
+
+        private ConsumoMinibar CrearMinibar()
+        {
+            return new ConsumoMinibar
+            {
+                Cantidad = CantidadMinibar,
+                PrecioUnitario = 3.50m
+            };
+        }
+
+        private Excursion CrearExcursion()
+        {
+            return new Excursion
+            {
+                Personas = PersonasExcursion,
+                PrecioPorPersona = PrecioExcursion
+            };
+        }
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -167,8 +204,8 @@ namespace WILY_2026_0421
 
         }
 
-        
-       
+
+
 
         private void btnDesglose_Click(object sender, EventArgs e)
         {
@@ -179,6 +216,19 @@ namespace WILY_2026_0421
             lstResultados.Items.Add($"ITBIS (18%):    US$ {reserva.Itbis:N2}");
             lstResultados.Items.Add($"Servicio (10%): US$ {reserva.Servicio:N2}");
             lstResultados.Items.Add($"Total:          US$ {reserva.Total:N2}");
+        }
+
+       
+
+        private void btnCuentaTotal_Click(object sender, EventArgs e)
+        {
+            var reserva = CrearReserva();
+            var traslado = CrearTraslado();
+            var excursion = CrearExcursion();
+            var minibar = CrearMinibar();
+
+            decimal cuenta = reserva.Total + traslado.Total + excursion.Total + minibar.Total;
+            lstResultados.Items.Add($"Cuenta total de la estadía: US$ {cuenta:N2}");
         }
     }
 }

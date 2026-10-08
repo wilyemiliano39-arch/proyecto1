@@ -47,6 +47,7 @@
             btnFinSemana = new Button();
             btnDeposito = new Button();
             btnDesglose = new Button();
+            btnCuentaTotal = new Button();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPersonas).BeginInit();
@@ -235,11 +236,22 @@
             btnDesglose.UseVisualStyleBackColor = true;
             btnDesglose.Click += btnDesglose_Click;
             // 
+            // btnCuentaTotal
+            // 
+            btnCuentaTotal.Location = new Point(542, 209);
+            btnCuentaTotal.Name = "btnCuentaTotal";
+            btnCuentaTotal.Size = new Size(189, 29);
+            btnCuentaTotal.TabIndex = 22;
+            btnCuentaTotal.Text = "Cuenta  Total";
+            btnCuentaTotal.UseVisualStyleBackColor = true;
+            btnCuentaTotal.Click += btnCuentaTotal_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCuentaTotal);
             Controls.Add(btnDesglose);
             Controls.Add(btnDeposito);
             Controls.Add(btnFinSemana);
@@ -291,5 +303,6 @@
         private Button btnFinSemana;
         private Button btnDeposito;
         private Button btnDesglose;
+        private Button btnCuentaTotal;
     }
 }
