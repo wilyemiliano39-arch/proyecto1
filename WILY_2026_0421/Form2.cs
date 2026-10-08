@@ -13,15 +13,43 @@ namespace WILY_2026_0421
         public Form2()
         {
             InitializeComponent();
+
+        }
+
+
+        private Reserva CrearReserva()
+        {
+            return new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = nudTarifa.Value
+            };
+
+        }
+        private Reserva CrearReservaConFinDeSemana()
+        {
+            decimal tarifa = nudTarifa.Value;
+            if (chkFinSemana.Checked)
+            {
+                tarifa = tarifa * 1.15m;
+            }
+
+            return new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = tarifa
+            };
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
         }
-        
 
-  
+
+
 
         private void ltsResultados_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -33,19 +61,19 @@ namespace WILY_2026_0421
             int a = 10;
             int b = 3;
             int r = a / b;
-            ltsResultados.Items.Add($"1.1  r = {r}");
+            lstResultados.Items.Add($"1.1  r = {r}");
 
             decimal r2 = 10 / 4m;
-            ltsResultados.Items.Add($"1.2  r = {r2}");
+            lstResultados.Items.Add($"1.2  r = {r2}");
 
             int x = 5;
             x = x + 2;
             x = x * 3;
-            ltsResultados.Items.Add($"1.3  x = {x}");
+            lstResultados.Items.Add($"1.3  x = {x}");
 
             decimal p = 200m;
             decimal r4 = p * 0.18m;
-            ltsResultados.Items.Add($"1.4  r = {r4}");
+            lstResultados.Items.Add($"1.4  r = {r4}");
 
             int n = 7;
             decimal d = 0m;
@@ -53,25 +81,105 @@ namespace WILY_2026_0421
             {
                 d = 50m;
             }
-            ltsResultados.Items.Add($"1.5  d = {d}");
+            lstResultados.Items.Add($"1.5  d = {d}");
 
             bool larga = n >= 7;
-            ltsResultados.Items.Add($"1.6  larga = {larga}");
+            lstResultados.Items.Add($"1.6  larga = {larga}");
 
             string s = "Villa" + "Coral";
-            ltsResultados.Items.Add($"1.7  s = {s}");
+            lstResultados.Items.Add($"1.7  s = {s}");
 
             int n8 = 4;
             decimal t8 = 100m;
             decimal total = n8 * t8 * 1.28m;
-            ltsResultados.Items.Add($"1.8  total = {total}");
+            lstResultados.Items.Add($"1.8  total = {total}");
 
             decimal t = 120m;
             t = t + t * 0.25m;
-            ltsResultados.Items.Add($"1.9  t = {t}");
+            lstResultados.Items.Add($"1.9  t = {t}");
 
             int noches = (int)8.9m;
-            ltsResultados.Items.Add($"1.10 noches = {noches}");
+            lstResultados.Items.Add($"1.10 noches = {noches}");
+        }
+
+        private void btnPesos_Click(object sender, EventArgs e)
+        {
+            var reserva = CrearReserva();
+            decimal tasa = nudTasa.Value;
+            decimal pesos = reserva.Total * tasa;
+            lstResultados.Items.Add($"Total en pesos: RD$ {pesos:N2}");
+        }
+
+        private void txtHuesped_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudPersonas_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudNoches_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudTarifa_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPorPersona_Click(object sender, EventArgs e)
+        {
+            var reserva = CrearReserva();
+            decimal porPersona = reserva.Total / nudPersonas.Value;
+            lstResultados.Items.Add($"Cada persona paga: US$ {porPersona:N2}");
+        }
+
+        private void btnDeposito_Click(object sender, EventArgs e)
+        {
+            var reserva = CrearReserva();
+            decimal deposito = reserva.Total * 0.30m;
+            decimal saldo = reserva.Total - deposito;
+            lstResultados.Items.Add($"Depósito (30%): US$ {deposito:N2}");
+            lstResultados.Items.Add($"Saldo pendiente: US$ {saldo:N2}");
+        }
+
+        private void btnFinSemana_Click(object sender, EventArgs e)
+        {
+
+
+
+            var reserva = CrearReservaConFinDeSemana();
+            lstResultados.Items.Add($"Total con fin de semana: US$ {reserva.Total:N2}");
+
+
+        }
+
+        
+       
+
+        private void btnDesglose_Click(object sender, EventArgs e)
+        {
+            var reserva = CrearReserva();
+            lstResultados.Items.Add($"Subtotal:       US$ {reserva.Subtotal:N2}");
+            lstResultados.Items.Add($"Descuento:      US$ {reserva.Descuento:N2}");
+            lstResultados.Items.Add($"Base imponible: US$ {reserva.BaseImponible:N2}");
+            lstResultados.Items.Add($"ITBIS (18%):    US$ {reserva.Itbis:N2}");
+            lstResultados.Items.Add($"Servicio (10%): US$ {reserva.Servicio:N2}");
+            lstResultados.Items.Add($"Total:          US$ {reserva.Total:N2}");
         }
     }
 }
+
